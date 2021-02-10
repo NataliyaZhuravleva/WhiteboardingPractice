@@ -1,0 +1,29 @@
+Prompt #5:
+Array sorting without .sort()
+input: [9,2,7,12]
+output: [2,7,9,12]
+BubbleSorting
+
+///////
+pseudocode
+create function which one will compare two neighbor's elements and switch them if the first > than the second
+
+
+/////////
+const bubbleSorting = (array)=>{
+  let swap;
+    do {
+      swap=false;
+      for (let i=0; i<array.length; i++){ //[9,2,7,12, 8] i=1 worst case=[12, 9, 8, 7, 2] n*n
+        if (array[i]> array[i+1]){//9>2
+          let temp=array[i] //9
+          array[i]=array[i+1] //2
+          array[i+1]=temp;   //9    [2, 7, 8, 9, 12]
+          swap = true;
+        } 
+      }
+    } while (swap);  
+  return array;
+};
+
+
